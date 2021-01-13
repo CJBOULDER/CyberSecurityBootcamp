@@ -1,0 +1,12 @@
+---
+- hosts: elk
+- become: True
+- roles:
+  - install-elk
+
+- hosts: dvwa
+- become: True
+- roles:
+  - install-filebeat
+  - install-metricbeat
+  - install-webservers

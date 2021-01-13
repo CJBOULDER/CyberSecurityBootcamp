@@ -1,0 +1,47 @@
+---
+#  - name: elk Playbook
+#    hosts: elk
+#    become: true
+#    tasks:
+-  name: Install docker.io
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        name: docker.io
+        state: present
+    - name: Install python3
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+    - name: Install PIP module  for Docker
+      pip:
+        name: docker
+        state: present
+#    - name: Install a .deb package from the internet
+#      apt:
+#        deb: https://example.com/python-ppq_0.1-1_all.deb
+    - name: Increase virtual memory
+      command: sysctl -w vm.max_map_count=262144
+      # Use sysctl module
+    - name: Use more memory
+      sysctl:
+        name: vm.max_map_count
+        value: 262144
+        state: present
+        reload: yes
+    - name: Install container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+        published_ports:
+            - 5601:5601
+            - 9200:9200
+            - 5044:5044
+    - name: Enable docker service
+      systemd:
+        name: docker
+        enabled: yes
+
