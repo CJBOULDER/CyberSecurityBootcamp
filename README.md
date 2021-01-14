@@ -3,7 +3,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Network Diagram](https://github.com/CJBOULDER/CyberSecurityBootcamp/blob/main/Diagrams/Network_Diagram.png "Network Diagram")
+![Network Diagram](https://github.com/CJBOULDER/CyberSecurityBootcamp/blob/main/Diagrams/Network_Design.png "Network Diagram")
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above or make changes to the architecture as needed. Select portions of each yaml file may be used to install only certain pieces of it, such as Filebeat.
 
