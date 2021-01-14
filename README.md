@@ -68,7 +68,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![Docker Container Running](https://github.com/CJBOULDER/CyberSecurityBootcamp/blob/main/images/docker_ps_output.png)
+![Docker Container Running](https://github.com/CJBOULDER/CyberSecurityBootcamp/blob/main/Ansible/images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
